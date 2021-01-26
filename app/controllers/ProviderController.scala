@@ -25,4 +25,9 @@ class ProviderController @Inject()(service: ProviderService,
       .map(services => Ok(Json.toJson(services)))
   }
 
+  def getSelectedProviderDetails(id: String): EssentialAction = Action.async {
+    service
+      .getSelectedProviderDetails(id)
+      .map(providers => Ok(Json.toJson(providers)))
+  }
 }

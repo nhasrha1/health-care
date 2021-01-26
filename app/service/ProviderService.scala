@@ -17,4 +17,7 @@ class ProviderService @Inject()(providerDao: ProviderDao)(
   def getProviderById(providerId: String): Future[Seq[ProviderServiceCost]] =
     providerDao.getProviderById(providerId)
 
+  def getSelectedProviderDetails(id: String): Future[Seq[Provider]] =
+    providerDao.getSelectedProviderDetails(id)
+
 }

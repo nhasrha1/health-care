@@ -34,4 +34,11 @@ class ProviderDao @Inject()(
     db.run(query)
   }
 
+  def getSelectedProviderDetails(id: String): Future[Seq[Provider]] = {
+    val query = providersTable
+      .filter(row => row.id === id)
+      .result
+    db.run(query)
+  }
+
 }
