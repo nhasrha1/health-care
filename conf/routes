@@ -3,5 +3,7 @@
 # ~~~~
 
 # Home page
-POST     /api/login                          controllers.LoginController.login
-
+POST     /api/login                        controllers.LoginController.login
+GET      /api/providers                    controllers.ProviderController.searchProviders(searchText: String)
+GET      /api/providersDetails/:providerId controllers.ProviderController.getSelectedProviderDetails(providerId: String)
+GET      /api/providers/:providerId        controllers.ProviderController.getProviderById(providerId: String)
